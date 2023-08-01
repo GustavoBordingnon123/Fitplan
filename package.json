@@ -18,8 +18,7 @@
     "react": "18.2.0",
     "react-native": "0.72.3",
     "react-native-dropdown-picker": "^5.4.6",
-    "react-native-picker-select": "^8.0.4",
-    "react-native-svg": "^13.10.0",
+    "react-native-svg": "^13.9.0",
     "react-native-svg-uri": "^1.2.3",
     "tailwindcss": "^2.2.19"
   },

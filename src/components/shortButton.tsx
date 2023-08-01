@@ -1,5 +1,5 @@
-import { View, StyleSheet, TouchableOpacity } from "react-native";
-import SvgUri from 'react-native-svg-uri';
+import React from 'react';
+import { View, StyleSheet, TouchableOpacity, Image } from "react-native";
 
 interface ButtonProps {
     type: string,
@@ -18,21 +18,21 @@ export default function ShortButton({ type, bgColor, borderColor, size }: Button
         executable = () => {
             alert('teste de adicionar')
         }
-        icon = require('../../assets/plusIcon.svg');
+        icon = require('../../assets/plusIcon.png');
     }
     
     if (type === 'remove') {
         executable = () => {
             alert('teste de remove')
         }
-        icon = require('../../assets/removeIcon.svg');
+        icon = require('../../assets/removeIcon.png');
     }
     
     if (type === 'confirm') {
         executable = () => {
             alert('teste de confirm')
         }
-        icon = require('../../assets/confirmIcon.svg');
+        icon = require('../../assets/confirmIcon.png');
     }
 
     const styles = StyleSheet.create({
@@ -55,11 +55,10 @@ export default function ShortButton({ type, bgColor, borderColor, size }: Button
     return (
         <View style={styles.container}>
             <TouchableOpacity onPress={executable}>
-                <SvgUri
-                    width={iconSize}
-                    height={iconSize}
-                    source={icon}
-                />
+            <Image
+                source={icon}
+                style={{ width: 16, height: 16 }}
+            />
             </TouchableOpacity>
         </View>
     );

@@ -3,15 +3,15 @@ import { View, TextInput, StyleSheet } from 'react-native';
 import stylesGeral from "../../stylesGeral";
 
 interface inputProps {
-  placeholder: string;
+  placeholderText: string;
   button?: any;
   bgColor: string,
   textColor: string;
-  pcColor:string;
-  
+  placeholderColor:string;
+  width:number;
 }
 
-export default function InputRows({ placeholder, button, bgColor,textColor, pcColor }: inputProps) {
+export default function InputRows({ placeholderText, button, bgColor,textColor, placeholderColor, width }: inputProps) {
   const styles = StyleSheet.create({
 
     container:{
@@ -20,8 +20,10 @@ export default function InputRows({ placeholder, button, bgColor,textColor, pcCo
       justifyContent:'space-between',
       backgroundColor: bgColor,
       height:50,
-      width: 330,
+      width: width,
       padding:10,
+      marginTop:10,
+      marginBottom:10,
     },
 
     input: {
@@ -32,8 +34,8 @@ export default function InputRows({ placeholder, button, bgColor,textColor, pcCo
   return (
     <View style={styles.container}>
       <TextInput
-        placeholder={placeholder}
-        placeholderTextColor= {pcColor}
+        placeholder={placeholderText}
+        placeholderTextColor= {placeholderColor}
         style={styles.input}
       />
       {button}
