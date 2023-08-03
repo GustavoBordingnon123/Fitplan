@@ -9,18 +9,15 @@
     "web": "expo start --web"
   },
   "dependencies": {
+    "chart.js": "^4.3.3",
     "expo": "~49.0.5",
     "expo-status-bar": "~1.6.0",
     "firebase": "^10.1.0",
-    "postcss": "^8.3.11",
-    "postcss-cli": "^9.0.1",
-    "postcss-import": "^14.0.2",
     "react": "18.2.0",
     "react-native": "0.72.3",
+    "react-native-chart-kit": "^6.12.0",
     "react-native-dropdown-picker": "^5.4.6",
-    "react-native-svg": "^13.9.0",
-    "react-native-svg-uri": "^1.2.3",
-    "tailwindcss": "^2.2.19"
+    "react-native-svg": "^13.9.0"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",

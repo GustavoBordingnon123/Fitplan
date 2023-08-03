@@ -16,6 +16,7 @@ import SelectRows from './src/components/selectRows';
 import DefaultButton from './src/components/defaultButton';
 import ShortButton from './src/components/shortButton';
 import NavBar from './src/components/navbar';
+import ChartComponent from './src/components/graph';
 
 //svgs
 import FoodIcon from './src/svg/food'
@@ -28,69 +29,9 @@ const App = () => {
   return (
     <>
         <View style={styles.container}>
-
-        <ScrollView contentContainerStyle={styles.scrollContainer}>
-          <Card 
-              label='Treino de hoje: '
-              title='Meta da vez: Supino 4x22' 
-              titlePosition='center'
-              titleColor='#CFDF20'
-              backgroundColor={'#0D5913'}
-              width={350}
-              rows={[
-                <TextRows 
-                  text='Musculos de hoje: Peito / biceps'
-                  backgroundColor={'#13861D'}
-                  width={320}
-                />,
-                <TextRows 
-                  text='Ficha de treino: abc'
-                  backgroundColor={'#13861D'}
-                  width={320}
-                />,
-                <TextRows 
-                  text='Status: A concluir'
-                  backgroundColor={'#13861D'}
-                  width={320}
-                />
-              ]}
-          />
-
-          <Card
-              label='Fichas de treino: '
-              title='Pos treino' 
-              titlePosition='center'
-              titleColor='#CFDF20'
-              backgroundColor={'#0D5913'}
-              width={350}
-              rows={[ 
-                <TextRows 
-                  text='Treino: ABC / 6x semana'
-                  backgroundColor={'#13861D'}
-                  width={320}
-                  button={
-                      <DefaultButton 
-                        placeholder='detalhes' 
-                        borderColor='#CFDF20' 
-                      />}
-                />,
-                <TextRows 
-                  text='Treino: ABCD / 6x semana'
-                  backgroundColor={'#13861D'}
-                  width={320}
-                />,
-                <TextRows 
-                  text='Treino: ABC / 5 semana'
-                  backgroundColor={'#13861D'}
-                  width={320}
-                />
-              ]}
-            />
-
-          </ScrollView>
-
-          <NavBar />
-            
+          
+          <ChartComponent />
+          
           <StatusBar style="auto" />
         </View>
 
