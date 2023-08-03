@@ -30,7 +30,7 @@ const App = () => {
     <>
         <View style={styles.container}>
           
-          <ChartComponent />
+          <ChartComponent label='Progressão de carga (kg x treinos):'/>
           
           <StatusBar style="auto" />
         </View>

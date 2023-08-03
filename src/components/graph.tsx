@@ -1,19 +1,24 @@
 import React from 'react';
-import { View, StyleSheet } from 'react-native';
+import { View, StyleSheet, Text } from 'react-native';
 import { LineChart } from 'react-native-chart-kit';
 
 const data = {
-  labels: ['Treino 1', 'Treino 2', 'Treino 3', 'Treino 4', 'Treino 5'],
+  labels: ['1', '2', '3', '4', '5', '6','7', '8', '9'],
   datasets: [
     {
-      data: [5, 10, 15, 17, 18, 20],
+      data: [5, 10, 15, 17, 18, 20, 20, 22, 22, 23, 25],
     },
   ],
 };
 
-const ChartComponent: React.FC = () => {
+interface ChartProps{
+  label?: string
+}
+
+export default function ChartComponent({label}: ChartProps){
   return (
     <View style={styles.container}>
+      <Text style={styles.title}>{label}</Text>
       <LineChart
         data={data}
         width={400}
@@ -24,6 +29,7 @@ const ChartComponent: React.FC = () => {
           backgroundColor: '#202E24',
           backgroundGradientFrom: '#202E24',
           backgroundGradientTo: '#202E24',
+          fillShadowGradient:'yellow',
           decimalPlaces: 1,
           color: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
           style: {
@@ -41,6 +47,13 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
+
+  title:{
+    fontSize:18,
+    marginBottom:30,
+    width:380,
+    color:'yellow'
+  }
 });
 
-export default ChartComponent;
+// export default ChartComponent;
