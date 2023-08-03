@@ -3,9 +3,11 @@ import { View, TextInput, StyleSheet, Text, Button } from 'react-native';
 interface TextProps{
     text:string,
     button?:any
+    backgroundColor: string,
+    width: number,
 }
 
-export default function TextRows({ text, button }: TextProps){
+export default function TextRows({ text, button, backgroundColor, width }: TextProps){
     const styles = StyleSheet.create({
 
         container:{
@@ -13,10 +15,12 @@ export default function TextRows({ text, button }: TextProps){
             alignItems:'center',
             justifyContent:'space-between',
             flexDirection:'row',
-            backgroundColor: '#0D5913',
+            backgroundColor: backgroundColor,
             height:50,
-            width: 330,
+            width: width,
             padding:10,
+            marginTop:10,
+            marginBottom:10
         },
 
         p: {
