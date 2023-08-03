@@ -65,11 +65,10 @@ export default function DefaultButton({ placeholder, borderColor, backgroundColo
             justifyContent: 'space-between',
             alignItems: 'center',
             height: 35,
-            width: width,
             borderWidth: 2,
             borderRadius: 15,
-            paddingLeft:55,
-            paddingRight:55,
+            paddingLeft:width,
+            paddingRight:width,
             backgroundColor:backgroundColor,
             borderColor: borderColor,
         },
@@ -81,10 +80,12 @@ export default function DefaultButton({ placeholder, borderColor, backgroundColo
     return (
         <View>
             <TouchableOpacity  style={styles.container} onPress={executable}>
-                <Image
-                    source={icon}
-                    style={{ width: 16, height: 16 }}
-                />
+                {icon !== null && (
+                    <Image
+                        source={icon}
+                        style={{ width: 16, height: 16 }}
+                    />
+                )}
                 <Text style={styles.p}>{placeholder}</Text>
             </TouchableOpacity>
         </View>
