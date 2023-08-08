@@ -1,0 +1,32 @@
+{
+    "cardio": false,
+    "days": [
+        {
+            "chave": "A",
+            "exercises": [
+                {
+                    "typeTrain": "peito",
+                    "names": ["supino-reto", "cruxifico-maquina", "cruxifixo-maquina-inclinado", "crossover"]
+                },
+                {
+                    "typeTrain": "triceps",
+                    "names": ["polia-reto", "polia-corda", "triceps-frances"]
+                }
+            ]
+        }, {
+            "chave": "B",
+            "exercises": [
+                {
+                    "typeTrain": "costas",
+                    "exercises": ["supino-reto", "cruxifico-maquina", "cruxifixo-maquina-inclinado", "crossover"]
+                },
+                {
+                    "typeTrain": "biceps",
+                    "exercises": ["polia-reto", "polia-corda", "triceps-frances"]
+                }
+            ]
+        }
+    ],
+    "rest": 2,
+    "qntSemana": 6
+}

@@ -2,6 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import React, { useEffect } from 'react';
 import { ScrollView, StyleSheet, Text, View } from 'react-native';
 import stylesGeral from './stylesGeral';
+import config from './src/config.json'
 
 // Firebase setup
 import { initializeApp } from 'firebase/app';
@@ -17,6 +18,8 @@ import DefaultButton from './src/components/defaultButton';
 import ShortButton from './src/components/shortButton';
 import NavBar from './src/components/navbar';
 import ChartComponent from './src/components/graph';
+import TrainingRow from './src/components/trainingRow';
+import TrainingForm from './src/components/trainForm';
 
 //svgs
 import FoodIcon from './src/svg/food'
@@ -25,12 +28,13 @@ import StatisticsIcon from './src/svg/statistics';
 
 const App = () => {
 
+  let variables = config;
+
 
   return (
     <>
         <View style={styles.container}>
           
-          <ChartComponent label='Progressão de carga (kg x treinos):'/>
           
           <StatusBar style="auto" />
         </View>
