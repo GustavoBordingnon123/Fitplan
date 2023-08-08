@@ -6,12 +6,13 @@ interface ButtonProps{
     backgroundColor:string,
     textColor:string,
     width:number,
+    padding:number,
     type?: string,
 }
 
 
 
-export default function DefaultButton({ placeholder, borderColor, backgroundColor, textColor, width, type }: ButtonProps) {
+export default function DefaultButton({ placeholder, borderColor, backgroundColor, textColor, width,padding, type }: ButtonProps) {
 
     let executable = () => {};
     let icon = null; 
@@ -67,8 +68,9 @@ export default function DefaultButton({ placeholder, borderColor, backgroundColo
             height: 35,
             borderWidth: 2,
             borderRadius: 15,
-            paddingLeft:width,
-            paddingRight:width,
+            paddingLeft:padding,
+            paddingRight:padding,
+            width:width,
             backgroundColor:backgroundColor,
             borderColor: borderColor,
         },

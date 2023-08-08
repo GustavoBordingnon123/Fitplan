@@ -26,47 +26,19 @@ import FoodIcon from './src/svg/food'
 import WeightIcon from './src/svg/weight';
 import StatisticsIcon from './src/svg/statistics';
 
-const App = () => {
+//pages 
+import Home from './pages/home';
 
-  let variables = config;
+const App = () => {
 
 
   return (
     <>
-        <View style={styles.container}>
-          
-          
-          <StatusBar style="auto" />
-        </View>
-
+     <Home />
     </>
 
     
   );
 };
-
-const styles = StyleSheet.create({
-  scrollContainer: {
-    flexGrow: 1,
-  },
-
-  container: {
-    flex: 1,
-    backgroundColor: '#202E24',
-    alignItems: 'center',
-    justifyContent: 'center',
-    marginTop: 5,
-    paddingBottom: 150,
-  },
-
-  text: {
-    fontSize:16,
-    color:'#CFDF20'
-  },
-
-  input:{
-    marginTop:5
-  }
-});
 
 export default App;

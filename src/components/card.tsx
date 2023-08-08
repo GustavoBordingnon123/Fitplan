@@ -9,7 +9,7 @@ interface CardProps{
     rows: any,
     footerText?: string,
     footerTextColor?: string,
-    footerButton?: string,
+    footerButton?: any,
     width:number,
     backgroundColor: string,
 }
@@ -19,11 +19,22 @@ export default function Card({ label, title, titlePosition, titleColor, rows, wi
 
     let containerPaddingBottom = 30;
 
-    if(!footerText){
+    if(!footerText && !footerButton){
       containerPaddingBottom = 0
     }
 
+    let titleContainer;
+    if(!title){
+       titleContainer = 0
+    }else{
+      titleContainer = 50
+    }
+
     const styles = StyleSheet.create({
+        
+        body:{
+          marginTop:20,
+        },
 
         container:{
             width:width,
@@ -49,21 +60,28 @@ export default function Card({ label, title, titlePosition, titleColor, rows, wi
         textContainer:{
             display:'flex',
             alignItems:titlePosition,
-            height:50,
+            height:titleContainer,
+        },
+        buttonContainer:{
+          width:width,
+          display:'flex',
+          alignItems:'center',
         }
     });
 
 
     return (
       <>
-        <View>
+        <View style={styles.body}>
           <Text  style={styles.label}>{label}</Text>
           <View style={styles.container}>
             <View style={styles.textContainer}>
                 <Text style={styles.title}>{title}</Text>
             </View>
             {rows}
-            <CardFooter text={footerText} button={footerButton} color={footerTextColor} />
+            <View style={styles.buttonContainer}>
+              <CardFooter text={footerText} button={footerButton} color={footerTextColor} />
+            </View>
           </View>
         </View>
       </>
