@@ -1,43 +1,27 @@
-import { StatusBar } from 'expo-status-bar';
-import React, { useEffect } from 'react';
-import { ScrollView, StyleSheet, Text, View } from 'react-native';
-import stylesGeral from './stylesGeral';
-import config from './src/config.json'
+import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 
 // Firebase setup
 import { initializeApp } from 'firebase/app';
 import { getFirestore, collection, doc, setDoc } from 'firebase/firestore';
-import {firebaseConfig} from './firebase/config'; // Certifique-se de que o caminho do arquivo está correto
+import { firebaseConfig } from './firebase/config';
 
-//components
-import Card from './src/components/card';
-import InputRows from './src/components/inputRows';
-import TextRows from './src/components/textRows';
-import SelectRows from './src/components/selectRows';
-import DefaultButton from './src/components/defaultButton';
-import ShortButton from './src/components/shortButton';
-import NavBar from './src/components/navbar';
-import ChartComponent from './src/components/graph';
-import TrainingRow from './src/components/trainingRow';
-import TrainingForm from './src/components/trainForm';
+// Pages
+import HomeScreen from './screens/TrainScreen';
+import FoodSreen from './screens/FoodScreen';
 
-//svgs
-import FoodIcon from './src/svg/food'
-import WeightIcon from './src/svg/weight';
-import StatisticsIcon from './src/svg/statistics';
 
-//pages 
-import Home from './pages/home';
+const Stack = createStackNavigator(); // Adicione esta linha para criar a instância da pilha
 
 const App = () => {
-
-
   return (
-    <>
-     <Home />
-    </>
-
-    
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Home">
+        <Stack.Screen name="Home" component={HomeScreen} options={{ headerShown: false }} />
+        <Stack.Screen name="Food" component={FoodSreen} options={{ headerShown: false }}  />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 };
 

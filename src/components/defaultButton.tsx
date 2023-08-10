@@ -3,7 +3,7 @@ import { TouchableOpacity, View, StyleSheet, Image, Text } from "react-native";
 interface ButtonProps{
     placeholder:string,
     borderColor:string,
-    backgroundColor:string,
+    backgroundColor?:string,
     textColor:string,
     width:number,
     padding:number,

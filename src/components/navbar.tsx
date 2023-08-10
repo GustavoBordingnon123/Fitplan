@@ -1,4 +1,5 @@
 import { View, TouchableOpacity,  StyleSheet} from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 //icons
 import FoodIcon from '../svg/food';
@@ -35,16 +36,18 @@ export default function NavBar(){
     });
 
     let goToTrain = () => {
-        alert('fui pra treino')
+        navigation.navigate('Home');
     }
 
     let goToFood = () => {
-        alert('fui pra comida')
+        navigation.navigate('Food');
     }
 
     let goToStatistics = () => {
         alert('fui pra estatisticas')
     }
+
+    const navigation = useNavigation(); 
 
 
     return(
@@ -53,15 +56,15 @@ export default function NavBar(){
                 
                 <View style={styles.iconsContainer}>
                     <TouchableOpacity onPress={goToTrain}>
-                        <WeightIcon size={32} color='red' />
+                        <WeightIcon size={32} color='#CFDF20' />
                     </TouchableOpacity>
 
                     <TouchableOpacity onPress={goToFood}>
-                        <FoodIcon size={32} color='red' />
+                        <FoodIcon size={32} color='#CFDF20' />
                     </TouchableOpacity>
 
                     <TouchableOpacity onPress={goToStatistics}>
-                        <StatisticsIcon size={32} color='red' />
+                        <StatisticsIcon size={32} color='#CFDF20' />
                     </TouchableOpacity>
                    
                 </View>

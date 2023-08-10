@@ -4,7 +4,7 @@ import TextRows from '../src/components/textRows';
 import DefaultButton from '../src/components/defaultButton';
 import NavBar from '../src/components/navbar';
 
-export default function Home(){
+export default function HomeScreen(){
 
     const styles = StyleSheet.create({
         container:{
@@ -12,12 +12,15 @@ export default function Home(){
             backgroundColor:"#202E24",
             display:'flex',
             alignItems:'center',
-            paddingBottom:170
+            paddingBottom:130
         }, 
         title:{
             color:"#CFDF20",
             fontSize:32,
             lineHeight:80,
+        },
+        buttonContainer:{
+            marginTop:30,
         }
       
     });
@@ -78,11 +81,14 @@ export default function Home(){
                         ]}
                         width={350}
                     />
-
-                    <NavBar />
+                    
+                    <View style={styles.buttonContainer}>
+                        <DefaultButton type="add" borderColor='#CFDF20'  placeholder='detalhes' width={180} padding={40} textColor='#CFDF20' />
+                    </View>
 
                 </View>
             </ScrollView>
+            <NavBar />
         </>
     );
 }

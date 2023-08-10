@@ -3,49 +3,60 @@ import React, { useState } from 'react'; // Certifique-se de importar useState c
 import { View, StyleSheet, TouchableOpacity } from "react-native";
 
 interface SelectProps {
-  placeholder: string;
-  itens: string[]; // Modificamos o tipo para indicar que é um array de strings
+  placeholderText: string;
+  itens: string[];
+  width: number;
+  bgColor:string;
+  textColor?:string;
 }
 
-export default function SelectRows({ placeholder, itens }: SelectProps) {
+export default function SelectRows({ placeholderText, itens, width, bgColor, textColor }: SelectProps) {
+
+  if(!textColor){
+    textColor = '#CFDF20';
+  }
+
+  let marginTop = 0
+
   const [open, setOpen] = useState(false);
   const [value, setValue] = useState(null);
 
-  // Usando map para gerar um novo array no formato esperado pelo componente DropDownPicker
   const items = itens.map((item) => ({ label: item, value: item }));
 
   const styles = StyleSheet.create({
     container: {
-      backgroundColor: "#0D5913",
-      width: 200,
+      backgroundColor: bgColor,
+      width: width,
       color:'#CFDF20',
+      zIndex:1,
     },
   });
 
   return (
-    <DropDownPicker
-      open={open}
-      value={value}
-      items={items}
-      placeholder={placeholder}
-      setOpen={setOpen}
-      setValue={setValue}
-      placeholderStyle={{
-        color: "#CFDF20",
-        fontWeight: "bold",
-      }}
-      dropDownContainerStyle={{
-        backgroundColor: "#0D5913",
-        width: 200,
-      }}
-      listItemLabelStyle={{
-        color: "#CFDF20",
-      }}
-     
-      modalTitleStyle={{
-        color: "#CFDF20",
-      }}
-      style={styles.container}
-    />
+    <View>
+        <DropDownPicker
+          open={open}
+          value={value}
+          items={items}
+          placeholder={placeholderText}
+          setOpen={setOpen}
+          setValue={setValue}
+          placeholderStyle={{
+            color: textColor,
+            fontWeight: "bold",
+          }}
+          dropDownContainerStyle={{
+            backgroundColor: bgColor,
+            width: width,
+          }}
+          listItemLabelStyle={{
+            color: textColor,
+          }}
+          modalTitleStyle={{
+            color: textColor,
+          }}
+          style={styles.container}
+        />
+    </View>
   );
 }
